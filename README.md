@@ -8,7 +8,6 @@ Before you can run the tests, ensure that you have the following installed:
 
 - Python 3.x
 - Google Chrome browser
-- ChromeDriver (compatible with your Chrome version)
 - PyTest
 - Selenium
 

@@ -8,7 +8,7 @@ def test_redirecting_to_orangehrm(login_page):
     """Test redirecting to the OrangeHRM website in a new tab."""
     expected_url = "https://www.orangehrm.com/"
     login_page.orangehrm_link.click()
-    assert login_page.switch_to_second_tab_and_check_url(expected_url), "Redirection was not performed"
+    assert login_page.switch_to_second_tab_and_check_url() == expected_url, "Redirection was not performed"
 
 
 def test_logo_is_displayed(login_page):

@@ -56,10 +56,10 @@ class LoginPage(BasePage):
         self.login(user)
         return DashboardPage(self.driver)
 
-    def switch_to_second_tab_and_check_url(self, expected_url):
+    def switch_to_second_tab_and_check_url(self):
         self.wait_for_condition(EC.number_of_windows_to_be(2))
         self.driver.switch_to.window(self.driver.window_handles[1])
-        return self.wait_for_condition(EC.url_contains(expected_url))
+        return self.driver.current_url
 
     def is_logo_displayed(self):
         logo = self.get_element(LoginPage.ORANGEHRM_LOGO)
