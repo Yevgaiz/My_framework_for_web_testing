@@ -24,5 +24,3 @@ def get_base_url():
 def get_browser():
     parser = get_parser()
     return parser['test']['browser'].lower()
-
-

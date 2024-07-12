@@ -3,20 +3,16 @@ from web_tests.pages.base_page import BasePage
 
 
 class DashboardPage(BasePage):
-    # URL = 'https://opensource-demo.orangehrmlive.com/web/index.php/dashboard'
 
     def __init__(self, driver):
         super().__init__(driver)
 
-    DASHBOARD_TITLE = (By.XPATH, '//h6[text()="Dashboard"]')
-
-    # def load(self):
-    #     self.driver.get(self.URL)
+    TIME_AT_WORK_CONTAINER = (
+        By.XPATH, "//div[@class='oxd-sheet oxd-sheet--rounded oxd-sheet--white orangehrm-dashboard-widget']")
 
     @property
-    def dashboard_title(self):
-        return self.get_element(DashboardPage.DASHBOARD_TITLE)
+    def time_at_work_container(self):
+        return self.get_element(DashboardPage.TIME_AT_WORK_CONTAINER)
 
     def is_displayed(self):
-        return self.dashboard_title.is_displayed()
-
+        return self.time_at_work_container.is_displayed()

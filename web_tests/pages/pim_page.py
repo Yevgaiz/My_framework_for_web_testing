@@ -1,8 +1,8 @@
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
 from web_tests.pages.add_employee_page import AddEmployeePage
 from web_tests.pages.base_page import BasePage
 from web_tests.pages.login_page import LoginPage
-from selenium.webdriver.support import expected_conditions as EC
 
 
 class PimPage(BasePage):
@@ -39,6 +39,7 @@ class PimPage(BasePage):
     @property
     def success_deletion_pop_up(self):
         return self.get_element(PimPage.SUCCESS_DELETION_POP_UP)
+
     @property
     def employee_name_input(self):
         return self.get_element(PimPage.EMPLOYEE_NAME_INPUT)
@@ -58,8 +59,11 @@ class PimPage(BasePage):
     def load_pim_page(self, user):
         login_page = LoginPage(self.driver)
         login_page.load().perform_successful_login(user)
-        self.pim_button.click()
+        self.click_pim_button()
         return self
+
+    def click_pim_button(self):
+        return self.pim_button.click()
 
     def click_add_button(self):
         self.add_button.click()
