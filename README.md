@@ -38,4 +38,4 @@ Before you can run the tests, ensure that you have the following installed:
 5. **Run the tests**
 
    ```sh
-   pytest
+   pytest .\tests\

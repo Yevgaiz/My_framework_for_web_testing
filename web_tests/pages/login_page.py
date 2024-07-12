@@ -2,10 +2,10 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from web_tests.pages.base_page import BasePage
 from web_tests.pages.dashboard_page import DashboardPage
+from web_tests.helpers.project_helpers import get_base_url
 
 
 class LoginPage(BasePage):
-    URL = 'https://opensource-demo.orangehrmlive.com/'
 
     def __init__(self, driver):
         super().__init__(driver)
@@ -33,7 +33,7 @@ class LoginPage(BasePage):
         return self.get_element(LoginPage.ORANGEHRM_lINK)
 
     def load(self):
-        self.driver.get(self.URL)
+        self.driver.get(get_base_url())
         return self
 
     def enter_username(self, user):
